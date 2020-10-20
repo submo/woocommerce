@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2da21327225a11510050822b603a5ca4",
+    "content-hash": "3d5ecf04afd92362be87c4363e963f82",
     "packages": [
         {
             "name": "automattic/jetpack-autoloader",
-            "version": "v2.2.0",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Automattic/jetpack-autoloader.git",
-                "reference": "66a5d150b3928be718d86696f85631a7f0b98a7b"
+                "reference": "75596db2f4843668792a1d2cc786cf82f60e9b72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Automattic/jetpack-autoloader/zipball/66a5d150b3928be718d86696f85631a7f0b98a7b",
-                "reference": "66a5d150b3928be718d86696f85631a7f0b98a7b",
+                "url": "https://api.github.com/repos/Automattic/jetpack-autoloader/zipball/75596db2f4843668792a1d2cc786cf82f60e9b72",
+                "reference": "75596db2f4843668792a1d2cc786cf82f60e9b72",
                 "shasum": ""
             },
             "require": {
@@ -31,6 +31,9 @@
                 "class": "Automattic\\Jetpack\\Autoloader\\CustomAutoloaderPlugin"
             },
             "autoload": {
+                "classmap": [
+                    "src/AutoloadGenerator.php"
+                ],
                 "psr-4": {
                     "Automattic\\Jetpack\\Autoloader\\": "src"
                 }
@@ -40,7 +43,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "Creates a custom autoloader for a plugin or theme.",
-            "time": "2020-08-14T20:34:36+00:00"
+            "time": "2020-09-28T14:13:14+00:00"
         },
         {
             "name": "automattic/jetpack-constants",
