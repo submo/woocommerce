@@ -25,12 +25,19 @@ $show_shipping_calculator = ! empty( $show_shipping_calculator );
 $calculator_text          = '';
 ?>
 <tr class="woocommerce-shipping-totals shipping">
-	<th><?php echo wp_kses_post( $package_name ); ?></th>
-	<td data-title="<?php echo esc_attr( $package_name ); ?>">
+	<th colspan="2"><h3><?php echo wp_kses_post( $package_name ); ?></h3>
+	<div><span>Si no tiene opción entrega a domicilio, confirma por favor:</br>
+	1.Pedido ha superado a 20€,</br>
+	2.Dirección correcto y dentro de la zona de reparto.</br>
+	</span></div>
+	</th>
+</tr>
+	<tr>
+	    <td colspan="2" data-title="<?php echo esc_attr( $package_name ); ?>">
 		<?php if ( $available_methods ) : ?>
 			<ul id="shipping_method" class="woocommerce-shipping-methods">
 				<?php foreach ( $available_methods as $method ) : ?>
-					<li>
+					<div class="avia-button   avia-icon_select-yes-left-icon avia-color-dark avia-size-small avia-position-center ">
 						<?php
 						if ( 1 < count( $available_methods ) ) {
 							printf( '<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />', $index, esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ), checked( $method->id, $chosen_method, false ) ); // WPCS: XSS ok.
@@ -40,7 +47,7 @@ $calculator_text          = '';
 						printf( '<label for="shipping_method_%1$s_%2$s">%3$s</label>', $index, esc_attr( sanitize_title( $method->id ) ), wc_cart_totals_shipping_method_label( $method ) ); // WPCS: XSS ok.
 						do_action( 'woocommerce_after_shipping_rate', $method, $index );
 						?>
-					</li>
+					</div>
 				<?php endforeach; ?>
 			</ul>
 			<?php if ( is_cart() ) : ?>
@@ -56,6 +63,10 @@ $calculator_text          = '';
 					?>
 				</p>
 			<?php endif; ?>
+		</td>
+	</tr>
+	<tr>
+		
 			<?php
 		elseif ( ! $has_calculated_shipping || ! $formatted_destination ) :
 			if ( is_cart() && 'no' === get_option( 'woocommerce_enable_shipping_calc' ) ) {
@@ -79,5 +90,5 @@ $calculator_text          = '';
 		<?php if ( $show_shipping_calculator ) : ?>
 			<?php woocommerce_shipping_calculator( $calculator_text ); ?>
 		<?php endif; ?>
-	</td>
+	
 </tr>

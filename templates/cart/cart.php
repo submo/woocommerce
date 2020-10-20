@@ -11,7 +11,7 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce\Templates
+ * @package WooCommerce/Templates
  * @version 3.8.0
  */
 
@@ -161,8 +161,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 <?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
 
-<div class="cart-collaterals">
-	<?php
+<!--div class="cart-collaterals">
+	<!?php
 		/**
 		 * Cart collaterals hook.
 		 *
@@ -171,6 +171,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 		 */
 		do_action( 'woocommerce_cart_collaterals' );
 	?>
-</div>
+</div -->
+<div class="wc-proceed-to-checkout">
+		
+<a href="/online/checkout/" class="checkout-button button alt wc-forward">
+	Confirmo los productos, siguiente paso →</a>
+	</div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>
